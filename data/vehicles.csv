@@ -1,0 +1,6 @@
+vin,brand,model,model_year,engine_type,country
+VIN001,Jeep,Grand Cherokee,2024,Gasoline,USA
+VIN002,Ram,1500,2025,Gasoline,USA
+VIN003,Fiat,500X,2023,Diesel,Italy
+VIN004,Peugeot,3008,2024,Hybrid,France
+VIN005,Citroen,C5 Aircross,2025,Hybrid,France
