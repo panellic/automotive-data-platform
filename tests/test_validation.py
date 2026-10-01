@@ -31,3 +31,35 @@ def test_duplicate_vin_fails_validation():
     )
 
     assert validate_vehicles(df) is False
+    
+    
+def test_invalid_model_year_fails_validation():
+    df = pd.DataFrame(
+        {
+            "vin": ["VIN001", "VIN002"],
+            "brand": ["Jeep", "Ram"],
+            "model": ["Grand Cherokee", "1500"],
+            "model_year": [1995, 2025],
+            "engine_type": ["Gasoline", "Gasoline"],
+            "country": ["USA", "USA"],
+        }
+    )
+
+    assert validate_vehicles(df) is False
+    
+    
+def test_missing_value_fails_validation():
+    df = pd.DataFrame(
+        {
+            "vin": ["VIN001", "VIN002"],
+            "brand": ["Jeep", None],
+            "model": ["Grand Cherokee", "1500"],
+            "model_year": [2024, 2025],
+            "engine_type": ["Gasoline", "Gasoline"],
+            "country": ["USA", "USA"],
+        }
+    )
+
+    assert validate_vehicles(df) is False
+
+    
