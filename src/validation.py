@@ -22,3 +22,4 @@ def validate_vehicles(df):
         print("Validation FAILED")
 
     return bool(is_valid)
+ 
