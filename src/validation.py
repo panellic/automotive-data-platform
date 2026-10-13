@@ -1,4 +1,7 @@
 
+MIN_MODEL_YEAR = 2000
+MAX_MODEL_YEAR = 2030
+
 def validate_vehicles(df):
     
     missing_values = df.isnull().sum().sum()
@@ -6,8 +9,8 @@ def validate_vehicles(df):
     duplicate_vins = df["vin"].duplicated().sum()
     
     invalid_model_years = (
-        (df["model_year"] < 2000) |
-        (df["model_year"] > 2030)
+        (df["model_year"] < MIN_MODEL_YEAR) |
+        (df["model_year"] > MAX_MODEL_YEAR)
     ).sum()
 
     print("Missing values:", missing_values)
