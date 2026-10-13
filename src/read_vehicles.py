@@ -21,3 +21,13 @@ if df is not None:
     print("\nIs valid:", is_valid)
 
 
+if __name__ == "__main__":
+    df = load_vehicles("data/vehicles.csv")
+
+    if df is not None:
+        print(df)
+
+        is_valid = validate_vehicles(df)
+
+        print("\nIs valid:", is_valid)
+        

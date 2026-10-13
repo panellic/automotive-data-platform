@@ -49,11 +49,11 @@ def test_invalid_model_year_fails_validation():
     assert validate_vehicles(df) is False
     
     
-def test_missing_value_fails_validation():
+def test_missing_vin_fails_validation():
     df = pd.DataFrame(
         {
-            "vin": ["VIN001", "VIN002"],
-            "brand": ["Jeep", None],
+            "vin": ["VIN001", None],
+            "brand": ["Jeep", "Ram"],
             "model": ["Grand Cherokee", "1500"],
             "model_year": [2024, 2025],
             "engine_type": ["Gasoline", "Gasoline"],
@@ -64,11 +64,14 @@ def test_missing_value_fails_validation():
     assert validate_vehicles(df) is False
 
 
-
 from src.read_vehicles import load_vehicles
 
 def test_missing_file_returns_none():
     df = load_vehicles("data/file_that_does_not_exist.csv")
 
     assert df is None
+    
+    
+    
+
     
