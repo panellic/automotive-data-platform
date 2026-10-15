@@ -13,18 +13,18 @@ def load_vehicles(file_path):
         print(f"File not found: {file_path}")
         return None
 
-df = load_vehicles(VEHICLES_FILE_PATH)
+# df = load_vehicles(VEHICLES_FILE_PATH)
 
-if df is not None:
-    print(df)
+# if df is not None:
+    # print(df)
 
-    is_valid = validate_vehicles(df)
+    # is_valid = validate_vehicles(df)
 
-    print("\nIs valid:", is_valid)
+    # print("\nIs valid:", is_valid)
 
 
 if __name__ == "__main__":
-    df = load_vehicles("data/vehicles.csv")
+    df = load_vehicles(VEHICLES_FILE_PATH)
 
     if df is not None:
         print(df)
