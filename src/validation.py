@@ -1,6 +1,5 @@
 
-MIN_MODEL_YEAR = 2000
-MAX_MODEL_YEAR = 2030
+from .config import MIN_MODEL_YEAR, MAX_MODEL_YEAR
 
 def validate_vehicles(df):
     

@@ -1,0 +1,5 @@
+
+VEHICLES_FILE_PATH = "data/vehicles.csv"
+
+MIN_MODEL_YEAR = 2000
+MAX_MODEL_YEAR = 2030
