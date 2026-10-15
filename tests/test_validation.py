@@ -73,5 +73,16 @@ def test_missing_file_returns_none():
     
     
     
+def test_missing_required_column_fails_validation():
+    df = pd.DataFrame(
+        {
+            "vin": ["VIN001", "VIN002"],
+            "brand": ["Jeep", "Ram"],
+            "model": ["Grand Cherokee", "1500"],
+            "model_year": [2024, 2025],
+            "engine_type": ["Gasoline", "Gasoline"],
+        }
+    )
 
+    assert validate_vehicles(df) is False
     
