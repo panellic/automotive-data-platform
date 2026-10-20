@@ -10,17 +10,25 @@ REQUIRED_COLUMNS = [
     "country",
 ]
 
+def count_missing_values(df):
+    return int(df.isnull().sum().sum())
+
+
+def count_duplicate_vins(df):
+    return int(df["vin"].duplicated().sum())
+    
+    
 def validate_vehicles(df):
     
-    missing_values = df.isnull().sum().sum()
+    missing_values = count_missing_values(df)
+    
+    duplicate_vins = count_duplicate_vins(df)
     
     missing_columns = [
         column
         for column in REQUIRED_COLUMNS
         if column not in df.columns
     ]
-    
-    duplicate_vins = df["vin"].duplicated().sum()
     
     invalid_model_years = (
         (df["model_year"] < MIN_MODEL_YEAR) |
@@ -49,3 +57,7 @@ def validate_vehicles(df):
 
     return bool(is_valid)
  
+ 
+ 
+    
+    
