@@ -26,6 +26,14 @@ def count_invalid_model_years(df):
         ).sum()
     )
     
+
+def get_missing_columns(df):
+    return [
+        column
+        for column in REQUIRED_COLUMNS
+        if column not in df.columns
+    ]
+    
     
 def validate_vehicles(df):
     
@@ -33,11 +41,7 @@ def validate_vehicles(df):
     
     duplicate_vins = count_duplicate_vins(df)
     
-    missing_columns = [
-        column
-        for column in REQUIRED_COLUMNS
-        if column not in df.columns
-    ]
+    missing_columns = get_missing_columns(df)
     
     invalid_model_years = count_invalid_model_years(df)
 
