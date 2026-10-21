@@ -17,6 +17,15 @@ def count_missing_values(df):
 def count_duplicate_vins(df):
     return int(df["vin"].duplicated().sum())
     
+
+def count_invalid_model_years(df):
+    return int(
+        (
+            (df["model_year"] < MIN_MODEL_YEAR)
+            | (df["model_year"] > MAX_MODEL_YEAR)
+        ).sum()
+    )
+    
     
 def validate_vehicles(df):
     
@@ -30,10 +39,7 @@ def validate_vehicles(df):
         if column not in df.columns
     ]
     
-    invalid_model_years = (
-        (df["model_year"] < MIN_MODEL_YEAR) |
-        (df["model_year"] > MAX_MODEL_YEAR)
-    ).sum()
+    invalid_model_years = count_invalid_model_years(df)
 
     print("Missing values:", missing_values)
     
