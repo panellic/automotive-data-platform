@@ -1,4 +1,5 @@
 # Automotive Data Platform
+![Tests](https://github.com/panellic/automotive-data-platform/actions/workflows/tests.yml/badge.svg)
 
 End-to-end Data Engineering portfolio project built to simulate an automotive data platform.
 
@@ -21,3 +22,5 @@ End-to-end Data Engineering portfolio project built to simulate an automotive da
 - Apache Airflow
 - Docker
 - Git / GitHub
+
+
