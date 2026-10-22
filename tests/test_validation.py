@@ -101,3 +101,15 @@ def test_count_duplicate_vins():
     )
 
     assert count_duplicate_vins(df) == 1
+    
+    
+def test_count_missing_values():
+    df = pd.DataFrame(
+        {
+            "vin": ["VIN001", None],
+            "brand": ["Jeep", None],
+        }
+    )
+
+    assert count_missing_values(df) == 2
+
