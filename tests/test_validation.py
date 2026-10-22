@@ -123,3 +123,23 @@ def test_count_invalid_model_years():
     )
 
     assert count_invalid_model_years(df) == 2
+    
+    
+def test_get_missing_columns():
+    df = pd.DataFrame(
+        {
+            "vin": ["VIN001"],
+            "brand": ["Jeep"],
+            "model": ["Grand Cherokee"],
+            "model_year": [2024],
+        }
+    )
+
+    missing_columns = get_missing_columns(df)
+
+    assert "engine_type" in missing_columns
+    assert "country" in missing_columns
+    assert len(missing_columns) == 2
+    
+    
+    
