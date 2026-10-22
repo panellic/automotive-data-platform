@@ -1,6 +1,12 @@
 import pandas as pd
 
-from src.validation import validate_vehicles
+from src.validation import (
+    validate_vehicles,
+    count_missing_values,
+    count_duplicate_vins,
+    count_invalid_model_years,
+    get_missing_columns,
+)
 
 
 
@@ -85,4 +91,13 @@ def test_missing_required_column_fails_validation():
     )
 
     assert validate_vehicles(df) is False
-    
+
+
+def test_count_duplicate_vins():
+    df = pd.DataFrame(
+        {
+            "vin": ["VIN001", "VIN001", "VIN002"],
+        }
+    )
+
+    assert count_duplicate_vins(df) == 1
