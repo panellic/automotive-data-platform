@@ -113,3 +113,13 @@ def test_count_missing_values():
 
     assert count_missing_values(df) == 2
 
+
+
+def test_count_invalid_model_years():
+    df = pd.DataFrame(
+        {
+            "model_year": [1999, 2024, 2031],
+        }
+    )
+
+    assert count_invalid_model_years(df) == 2
