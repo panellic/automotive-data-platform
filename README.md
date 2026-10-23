@@ -50,3 +50,12 @@ automotive-data-platform/
 ├── README.md
 └── requirements.txt
 
+## Data quality checks
+
+The current pipeline validates:
+
+- Missing values
+- Duplicate VINs
+- Invalid model years
+- Missing required columns
+
