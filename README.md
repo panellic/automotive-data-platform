@@ -30,3 +30,23 @@ Install dependencies:
 ```bash
 python -m pip install -r requirements.txt
 
+## Project structure
+
+```text
+automotive-data-platform/
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+├── data/
+│   └── vehicles.csv
+├── src/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── read_vehicles.py
+│   └── validation.py
+├── tests/
+│   └── test_validation.py
+├── .gitignore
+├── README.md
+└── requirements.txt
+
