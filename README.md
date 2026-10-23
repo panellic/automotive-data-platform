@@ -23,4 +23,10 @@ End-to-end Data Engineering portfolio project built to simulate an automotive da
 - Docker
 - Git / GitHub
 
+## Run locally
+
+Install dependencies:
+
+```bash
+python -m pip install -r requirements.txt
 
