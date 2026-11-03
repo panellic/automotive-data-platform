@@ -1,14 +1,22 @@
 
 import psycopg2
 
+from .config import (
+    POSTGRES_HOST,
+    POSTGRES_DB,
+    POSTGRES_USER,
+    POSTGRES_PASSWORD,
+    POSTGRES_PORT,
+)
 
-def get_connection(host, database, user, password, port=5432):
+
+def get_connection():
     return psycopg2.connect(
-        host=host,
-        database=database,
-        user=user,
-        password=password,
-        port=port,
+        host=POSTGRES_HOST,
+        database=POSTGRES_DB,
+        user=POSTGRES_USER,
+        password=POSTGRES_PASSWORD,
+        port=POSTGRES_PORT,
     )
     
     
